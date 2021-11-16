@@ -1,0 +1,18 @@
+<div class="results-block">
+  <%= render 'layouts/messages', class: "error-block" %>
+</div>
+
+<% if @stock %>
+  <div class="card text-white bg-mine mb-3" style="max-width: 16rem;">
+    <div class="card-body">  
+      <p> <strong> Symbol: </strong> <em class="font"><%= @stock.ticker %> </em></p> 
+      <p> <strong> Name: </strong> <em class="font"><%= @stock.name %> </em></p> 
+      <p> <strong> Price: </strong> <em class="font"><%= @stock.last_price %> </em></p> 
+        
+    </div>
+  </div>
+<% end %> 
+
+
+
+
