@@ -1,4 +1,42 @@
 @import 'bootstrap/dist/css/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,300&display=swap');
+@font-face {
+    font-family: Calibri Light Italic;
+    src: url(fonts/calibrilightitalic/calibrili.ttf);
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --red-light: #F5C6CB;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #1BBED7;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .search-area {
     padding-top: 50px;
 }
@@ -9,4 +47,25 @@
 
 .no-left-padding {
     padding-left: 0 !important;
+}
+
+.font {
+    // font-family: 'Ubuntu', sans-serif;
+    // font-weight: Regular 400;
+    font-family: Calibri Light Italic;
+}
+
+.bg-mine {
+    background-color: var(--cyan);
+}
+
+.btn-mine {
+    background-color: var(--cyan);
+    color: var(--white);
+}
+
+.alert-danger {
+    background-color: var(--red-light);
+    font-family: Garamond, serif;
+    font-size: 1.2em;
 }
