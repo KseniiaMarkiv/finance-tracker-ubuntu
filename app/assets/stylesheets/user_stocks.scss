@@ -1,3 +1,30 @@
 // Place all the styles related to the UserStocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// result
+.card-body {
+    padding: 0.2em;
+}
+
+span.badge.badge-secondary {
+    margin-top: 10px;
+}
+
+.font {
+    // font-family: 'Ubuntu', sans-serif;
+    // font-weight: Regular 400;
+    font-family: Calibri Light Italic;
+}
+
+div.bg-mine {
+    background-color: var(--cyan);
+}
+
+div.bg-mine p {
+    margin: 10px 10px 10px 20px;
+}
+
+.btn-mine {
+    background-color: var(--cyan);
+    color: var(--white);
+}

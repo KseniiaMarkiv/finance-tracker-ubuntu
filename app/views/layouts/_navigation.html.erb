@@ -40,12 +40,7 @@
                   </li>
                 </ul>
 
-                <ul class='navbar-nav ml-auto'>
-                    <li class='nav-item'>
-                      <%= link_to("Logout", destroy_user_session_path,
-                            class: "btn btn-outline-warning logout-button", method: :delete)%>
-                    </li>
-                </ul>
+
 
                 <form class="form-inline my-2 my-lg-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -61,22 +56,30 @@
   </div>
 
   <nav class="navbar navbar-dark bg-dark mb-5">
-    <div class="container">
+    <div class="container pr-1">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <% if current_user %> <%# fix problem with sigh_out function - needed loaded through current_user %>
-        
-          <li class='nav-item user-name'>
-            <% if current_user.full_name == "Anonymous" %>
-                <i class="bi bi-person-x" style="font-size: 2rem; color: cornflowerblue;"></i>
-              <%= "Anonymous" %>
-            <% else %>
-              <i class="bi bi-person-check" style="font-size: 2rem; color: cornflowerblue;"></i>
-              <%= current_user.full_name %> 
-            <% end %>
-          </li>
-        
+  
+          <ul class='navbar-nav ml-auto user-name'>       
+            <li class='nav-item'>
+              <% if current_user.full_name == "Anonymous" %>
+                  <i class="bi bi-person-x" style="font-size: 2rem; color: cornflowerblue;"></i>
+                <%= "Anonymous" %>
+              <% else %>
+                <i class="bi bi-person-check" style="font-size: 2rem; color: cornflowerblue;"></i>
+                <%= current_user.full_name %> 
+              <% end %>
+            </li>
+          </ul>
+
+          <ul class='navbar-nav user-name'>
+            <li class='nav-item'>
+              <%= link_to("Logout", destroy_user_session_path,
+                    class: "btn btn-outline-warning logout-button", method: :delete)%>
+            </li>
+          </ul> 
       <% end %>
     </div>
   </nav>

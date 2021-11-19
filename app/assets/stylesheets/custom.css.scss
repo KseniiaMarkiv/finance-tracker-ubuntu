@@ -37,6 +37,7 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+// navigation 
 .results-block {
     display: inline-block;
     margin-bottom: 1rem;
@@ -54,25 +55,6 @@
     padding-left: 0 !important;
 }
 
-.font {
-    // font-family: 'Ubuntu', sans-serif;
-    // font-weight: Regular 400;
-    font-family: Calibri Light Italic;
-}
-
-div.bg-mine {
-    background-color: var(--cyan);
-}
-
-div.bg-mine p {
-    margin: 10px 10px 10px 20px;
-}
-
-.btn-mine {
-    background-color: var(--cyan);
-    color: var(--white);
-}
-
 .alert-danger {
     background-color: var(--red-light);
     font-family: Garamond, serif;
@@ -83,6 +65,7 @@ div.bg-mine p {
     margin-right: 8px;
 }
 
+// nav button panel
 .user-name {
     font-size: 1.5rem;
     color: cornflowerblue;
@@ -92,6 +75,7 @@ div.bg-mine p {
     padding-right: 8px;
 }
 
-li.nav-item.user-name {
+ul.navbar-nav.user-name {
+    margin-left: 2em;
     list-style-type: none !important;
 }
