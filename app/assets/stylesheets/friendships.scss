@@ -1,3 +1,10 @@
 // Place all the styles related to the friendships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.btn-outline-pink {
+    border-color: none;
+    font-size: bold;
+    border-width: medium;
+    font-weight: bold;
+    color: var(--pink);
+}

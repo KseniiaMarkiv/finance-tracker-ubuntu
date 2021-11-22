@@ -13,11 +13,13 @@
               <td class="card-text"> <strong> Actions: </strong> 
                 <%= link_to "View Profile", '#', class: "btn btn-sm btn-info" %>
                 <% if current_user.not_friends_with?(friend.id) %> 
-                  <%= link_to 'Follow friend?', '#', class: "btn btn-sm btn-info", method: :post %>
+                  <%= link_to 'Follow friend?', friendships_path(friend: friend), class: "btn btn-sm btn-info", method: :post %>
                 <% else %>
-                  <span class="badge badge-secondar">
-                    You are friends
-                  </span>
+                  <button type="button" class="btn btn-sm btn-outline-pink">
+                    
+                      You are friends
+                    
+                  </button>
                 <% end %>
               </td>
             </tr>   
