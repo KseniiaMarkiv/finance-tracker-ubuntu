@@ -2,26 +2,28 @@
   <%= render 'layouts/messages', class: "error-block" %>
 </div>
 
-<% if @friend %>
-
-    <div class="card text-white bg-mine mb-3" style="max-width: 16rem;">  
-      <div class="card-header"> <strong> Chosen element </strong></div>
-        <div class="card-body">
-          <p class="card-text"> <strong> Name: </strong> <em class="font"><%= @friend.full_name %> </em></p> 
-          <p class="card-text"> <strong> Email: </strong> <em class="font"><%= @friend.email %> </em></p> 
-          <p class="card-text"> <strong> Actions: </strong> <em class="font"><%= link_to "View Profile", '#',
-                              class: "btn btn-sm btn-info" %> </em></p> 
-        </div>
-    
-      <% if current_user.not_friends_with?(friend.id) %>
-        <%= link_to 'Follow friend?', '#',
-                                    class: "btn btn-info", method: :post %>        
-      <% else %>
-        <span class="badge badge-secondary">
-          You are friends
-        </span>
-      <% end %>
-      </div>
+<% if @friends %>
+    <div class="card card-header results-block">
+      <table class="col-md-12">
+        <tbody>
+          <% @friends.each do |friend| %>  
+            <tr>
+              <td class="card-text"> <strong> Name: </strong> <em class="font"><%= friend.full_name %> </em></td> 
+              <td class="card-text"> <strong> Email: </strong> <em class="font"><%= friend.email %> </em></td> 
+              <td class="card-text"> <strong> Actions: </strong> 
+                <%= link_to "View Profile", '#', class: "btn btn-sm btn-info" %>
+                <% if current_user.not_friends_with?(friend.id) %> 
+                  <%= link_to 'Follow friend?', '#', class: "btn btn-sm btn-info", method: :post %>
+                <% else %>
+                  <span class="badge badge-secondar">
+                    You are friends
+                  </span>
+                <% end %>
+              </td>
+            </tr>   
+          <% end %> 
+        </tbody>
+      </table>
     </div>
-
+  
 <% end %> 
