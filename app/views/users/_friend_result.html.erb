@@ -1,0 +1,27 @@
+<div class="results-block">
+  <%= render 'layouts/messages', class: "error-block" %>
+</div>
+
+<% if @friend %>
+
+    <div class="card text-white bg-mine mb-3" style="max-width: 16rem;">  
+      <div class="card-header"> <strong> Chosen element </strong></div>
+        <div class="card-body">
+          <p class="card-text"> <strong> Name: </strong> <em class="font"><%= @friend.full_name %> </em></p> 
+          <p class="card-text"> <strong> Email: </strong> <em class="font"><%= @friend.email %> </em></p> 
+          <p class="card-text"> <strong> Actions: </strong> <em class="font"><%= link_to "View Profile", '#',
+                              class: "btn btn-sm btn-info" %> </em></p> 
+        </div>
+    
+      <% if current_user.not_friends_with?(friend.id) %>
+        <%= link_to 'Follow friend?', '#',
+                                    class: "btn btn-info", method: :post %>        
+      <% else %>
+        <span class="badge badge-secondary">
+          You are friends
+        </span>
+      <% end %>
+      </div>
+    </div>
+
+<% end %> 
