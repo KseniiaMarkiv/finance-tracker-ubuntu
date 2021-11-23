@@ -14,7 +14,7 @@
     
       <% if current_user.can_track_stock?(@stock.ticker) %>
         <%= link_to 'Add to portfolio', user_stocks_path(user: current_user, ticker: @stock.ticker),
-                                    class: "btn btn-info", method: :post %>        
+                                    class: "btn btn-sm btn-info", method: :post %>        
       <% else %>
         <span class="badge badge-secondary">
           You are already tracking
