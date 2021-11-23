@@ -22,7 +22,7 @@
                   <span class="badge badge-secondary">
                     You are already tracking
                     <% if !current_user.under_stock_limit? %>
-                      10 stocks
+                      10 stocks - the maximun number of stocks!
                     <% end %>
                     <% if current_user.stock_already_tracked?(stock.ticker) %>
                       this stock
