@@ -9,7 +9,22 @@
         <div class="card-body">
           <p class="card-text"> <strong> Symbol: </strong> <em class="font"><%= @stock.ticker %> </em></p> 
           <p class="card-text"> <strong> Name: </strong> <em class="font"><%= @stock.name %> </em></p> 
-          <p class="card-text"> <strong> Price: </strong> <em class="font"><%= @stock.last_price %> </em></p> 
+          <p class="card-text"> <strong> Price: </strong> <em class="font"><%= @stock.last_price %> </em></p>
+          <p class="card-text"> <strong> Update Price: </strong> <em class="font"><%= @stock.update_price %> </em></p>
+          <p class="card-text"> <strong> Diff Price: </strong> 
+            <b>
+              <% if @stock.last_price %>
+                <% @stock.update_price = @stock.last_price if !@stock.update_price %>
+                <% diff_price = @stock.update_price - @stock.last_price %>
+                  <% if diff_price < 0 %>
+                    <span class="text-danger">  <%= number_with_precision(diff_price, precision: 2) %> </span>
+                  <% else %>
+                    <span class="text-primary"> +<%= number_with_precision(diff_price, precision: 2) %> </span>
+                  <% end %>
+              <% end %>
+            </b>
+          </p>
+            
         </div>
     
       <% if current_user.can_track_stock?(@stock.ticker) %>

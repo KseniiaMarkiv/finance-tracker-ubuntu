@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_134325) do
+ActiveRecord::Schema.define(version: 2021_11_23_192824) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_134325) do
     t.decimal "last_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "update_price"
   end
 
   create_table "user_stocks", force: :cascade do |t|

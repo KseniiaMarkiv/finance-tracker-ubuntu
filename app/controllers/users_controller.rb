@@ -2,7 +2,15 @@ class UsersController < ApplicationController
   def my_portfolio
     @user = current_user
     @tracked_stocks = current_user.stocks
+    @tracked_stocks.each do |stock|
+    new_stock = Stock.new_lookup(stock.ticker)
+      if new_stock.last_price != stock.last_price
+        stock.update_price = stock.last_price
+        stock.last_price = new_stock.last_price
+      end
+    end
   end
+
   def my_friends
     @friends = current_user.friends
   end
